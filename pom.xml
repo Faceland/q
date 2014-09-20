@@ -94,6 +94,21 @@
             </properties>
         </profile>
         <profile>
+            <id>drone</id>
+            <activation>
+                <property>
+                    <name>env.DRONE_BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <properties>
+                <project.build.number>${env.DRONE_BUILD_NUMBER}</project.build.number>
+                <project.build.version>
+                    ${project.version}-b${project.build.number}-jenkins
+                </project.build.version>
+                <project.build.name>${project.name}</project.build.name>
+            </properties>
+        </profile>
+        <profile>
             <id>default</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
