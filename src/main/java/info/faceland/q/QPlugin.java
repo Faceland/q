@@ -18,6 +18,7 @@ public class QPlugin extends FacePlugin {
     public void enable() {
         questionManager = new QuestionManager();
         qListener = new QListener(this);
+        getServer().getPluginManager().registerEvents(qListener, this);
     }
 
     @Override
