@@ -20,6 +20,7 @@ public class QListener implements Listener {
             return;
         }
         String cmd = event.getMessage().substring(1);
+        plugin.getLogger().info(cmd);
         Player player = event.getPlayer();
         if (!plugin.getQuestionManager().hasQuestion(player.getUniqueId())) {
             return;
