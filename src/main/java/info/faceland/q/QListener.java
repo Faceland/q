@@ -21,6 +21,9 @@ public class QListener implements Listener {
         }
         String cmd = event.getMessage().substring(1);
         Player player = event.getPlayer();
+        if (!plugin.getQuestionManager().hasQuestion(player.getUniqueId())) {
+            return;
+        }
         try {
             Runnable reaction = plugin.getQuestionManager().answerFirstQuestion(player.getUniqueId(), cmd);
             int id = plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, reaction);
