@@ -6,6 +6,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.logging.Level;
+
 public class QListener implements Listener {
 
     private QPlugin plugin;
@@ -20,8 +22,8 @@ public class QListener implements Listener {
             return;
         }
         String cmd = event.getMessage().substring(1);
-        plugin.getLogger().info(cmd);
         Player player = event.getPlayer();
+        plugin.debug(Level.FINE, player.getName() + " used " + cmd);
         if (!plugin.getQuestionManager().hasQuestion(player.getUniqueId())) {
             return;
         }
