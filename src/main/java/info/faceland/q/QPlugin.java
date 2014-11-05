@@ -20,7 +20,7 @@ public class QPlugin extends FacePlugin {
 
     @Override
     public void enable() {
-        debugPrinter = new DebugPrinter(getDataFolder().getName(), "debug.log");
+        debugPrinter = new DebugPrinter(getDataFolder().getPath(), "debug.log");
         questionManager = new QuestionManager();
         qListener = new QListener(this);
         getServer().getPluginManager().registerEvents(qListener, this);
