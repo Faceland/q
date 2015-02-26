@@ -1,9 +1,9 @@
 package info.faceland.q;
 
+import com.tealcube.minecraft.bukkit.facecore.logging.PluginLogger;
+import com.tealcube.minecraft.bukkit.facecore.plugin.FacePlugin;
 import info.faceland.q.actions.questions.QuestionManager;
 import org.bukkit.event.HandlerList;
-import org.nunnerycode.facecore.logging.PluginLogger;
-import org.nunnerycode.facecore.plugin.FacePlugin;
 
 import java.util.Arrays;
 import java.util.logging.Level;

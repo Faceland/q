@@ -23,7 +23,6 @@ public class QListener implements Listener {
         }
         String cmd = event.getMessage().substring(1);
         Player player = event.getPlayer();
-        plugin.debug(Level.FINE, player.getName() + " used " + cmd);
         if (!plugin.getQuestionManager().hasQuestion(player.getUniqueId())) {
             return;
         }
