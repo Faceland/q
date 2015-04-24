@@ -13,9 +13,15 @@ public class QPlugin extends FacePlugin {
     private QuestionManager questionManager;
     private QListener qListener;
     private PluginLogger debugPrinter;
+    private static QPlugin instance;
+
+    public static QPlugin getInstance() {
+        return instance;
+    }
 
     @Override
     public void enable() {
+        instance = this;
         debugPrinter = new PluginLogger(this);
         questionManager = new QuestionManager();
         qListener = new QListener(this);

@@ -1,9 +1,11 @@
 package info.faceland.q.actions.questions;
 
+import info.faceland.q.QPlugin;
 import info.faceland.q.actions.options.InvalidOptionException;
 import info.faceland.q.actions.options.Option;
 
 import java.util.List;
+import java.util.logging.Level;
 
 public class AbstractQuestion {
 
@@ -13,7 +15,9 @@ public class AbstractQuestion {
     protected boolean persistence;
 
     public Option getOption(String command) throws InvalidOptionException {
+        QPlugin.getInstance().debug(Level.INFO, "-------- Fetching options matching: " + command);
         for (Option o : options) {
+            QPlugin.getInstance().debug(Level.INFO, o.getCommand());
             if (o.isCommand(command)) {
                 return o;
             }

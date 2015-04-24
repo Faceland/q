@@ -82,8 +82,9 @@ public class QuestionManager {
             int id = question.id;
             for (UUID qTarget : new ArrayList<>(question.getTargets()))
                 removeQuestionId(qTarget, id);
-        } else
+        } else {
             playersActiveQuestions.removeFirst();
+        }
     }
 
     public void removeQuestionInQueue(UUID target, int queueNumber) throws Exception {
@@ -107,7 +108,7 @@ public class QuestionManager {
 
     public void removeQuestionId(UUID target, int id) throws Exception {
         LinkedList<AbstractQuestion> playersActiveQuestions = getQuestions(target);
-        for (AbstractQuestion question : new LinkedList<AbstractQuestion>(playersActiveQuestions)) {
+        for (AbstractQuestion question : new LinkedList<>(playersActiveQuestions)) {
             if (question.id == id) {
                 playersActiveQuestions.remove(question);
             }
